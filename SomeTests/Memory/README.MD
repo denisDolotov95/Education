@@ -53,8 +53,13 @@ Memory/
 
 ## Графики потребления памяти
 
+Генератор:
 ![Generator](./mprofile/mprofile_gen.png)
+Словарь:
 ![Dict](./mprofile/mprofile_dict.png)
+Список:
 ![List](./mprofile/mprofile_list.png)
+Множество:
 ![Set](./mprofile/mprofile_set.png)
+Кортеж:
 ![Tuple](./mprofile/mprofile_tuple.png)
