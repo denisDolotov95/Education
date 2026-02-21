@@ -1,0 +1,18 @@
+Filename: /media/fox/application/python3/gitHUB/education/SomeTests/Memory/test_memory.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    53     48.8 MiB     48.8 MiB           1   @memory_profiler.profile(stream=open(f"{PATH}/test_memory_tuple.log", "w+"))
+    54                                         def test_memory_tuple():
+    55                                             """Как выделяется память и утилизируется
+    56                                             под кортежи в python3
+    57                                             """
+    58                                         
+    59                                             # создаем итератор кортежей
+    60   4718.6 MiB   4669.7 MiB      200003       _data = tuple(f"{i}" * MULTIPLY for i in range(RANGE))
+    61                                         
+    62   4718.5 MiB     -0.1 MiB           1       print(type(_data))
+    63   4718.5 MiB      0.0 MiB      100001       for i in _data:
+    64   4718.5 MiB      0.0 MiB      100000           pass
+
+

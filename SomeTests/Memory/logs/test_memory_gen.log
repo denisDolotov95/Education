@@ -1,0 +1,24 @@
+Filename: /media/fox/application/python3/gitHUB/education/SomeTests/Memory/test_memory.py
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+    67     50.9 MiB     50.9 MiB           1   @memory_profiler.profile(stream=open(f"{PATH}/test_memory_gen.log", "w+"))
+    68                                         def test_memory_gen():
+    69                                             """Как выделяется память и утилизируется
+    70                                             под генераторы в python3
+    71                                             """
+    72                                         
+    73                                             # # создаем генератор
+    74                                             # def _data():
+    75                                             #     for i in range(RANGE):
+    76                                             #         yield "3" * (MULTIPLY)
+    77                                         
+    78                                             # создаем генератор
+    79     50.9 MiB      0.0 MiB      200003       _data = (f"{i}" * MULTIPLY for i in range(RANGE))
+    80                                         
+    81     50.9 MiB      0.0 MiB           1       print(type(_data))
+    82                                             # итерируем по генератору
+    83     50.9 MiB      0.0 MiB      100001       for i in _data:
+    84     50.9 MiB      0.0 MiB      100000           pass
+
+
