@@ -39,7 +39,14 @@ pip install memory-profiler
 python test_memory.py
 ```
 
+```bash
+mprof run test_memory.py - сгенерирует файл mprofile_20260302020243.dat
+mprof plot mprofile_20260302020243.dat - отрисовываем график
+```
+
 После выполнения отчёты по памяти появятся в каталоге `logs/`, графики (если строились) — в `mprofile/`.
+
+
 
 ## Структура проекта
 
