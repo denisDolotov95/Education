@@ -17,7 +17,7 @@ RUN echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen && \
 
 WORKDIR /usr/src
 COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt1
+RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 CMD ["uvicorn", "run:app", "--reload", "--port $FAST_API_PORT"]
