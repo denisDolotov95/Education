@@ -1,0 +1,13 @@
+{
+    "title": "Authentication",
+    "openapi_tags": [
+        {
+            "name": "Token",
+            "description": "Operations with token",
+            "externalDocs": {
+                "description": "Items external docs",
+                "url": "https://fastapi.tiangolo.com/"
+            }
+        }
+    ]
+}

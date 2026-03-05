@@ -1,0 +1,42 @@
+name: auth_fast_api
+
+services:
+  fast_api:
+    image: ${PREFIX_NAME}_fast_api
+    container_name: ${PREFIX_NAME}_fast_api
+    build: .
+    environment:
+      - REDIS_URL=${REDIS_URL}
+      - POSTGRES_URL=${POSTGRES_URL}
+    networks:
+      education:
+        ipv4_address: ${FAST_API_HOST}
+    ports:
+      - ${FAST_API_PORT}:${FAST_API_PORT}
+    restart: always
+
+  redis:
+    image: redis:latest
+    container_name: ${PREFIX_NAME}_redis
+    # volumes:
+    #   - /path/to/local/dаta:/root/redis
+    #   - /path/to/local/redis.conf:/usr/local/etc/redis/redis.conf
+    environment:
+      - REDIS_PORT=${REDIS_PORT}
+      - REDIS_DATABASES=16
+    networks:
+      production:
+        ipv4_address: ${REDIS_HOST}
+    ports:
+      - "${REDIS_PORT}:${REDIS_PORT}"
+    depends_on:
+      - fast_api
+    restart: always
+
+networks:
+  education:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.50.0.0/24
+          gateway: 172.50.0.1
