@@ -25,7 +25,7 @@ services:
       - REDIS_PORT=${REDIS_PORT}
       - REDIS_DATABASES=16
     networks:
-      production:
+      education:
         ipv4_address: ${REDIS_HOST}
     ports:
       - "${REDIS_PORT}:${REDIS_PORT}"

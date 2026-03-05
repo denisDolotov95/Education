@@ -20,4 +20,4 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
-CMD ["uvicorn", "run:app", "--reload", "--port $PORT_FAST_API"]
+CMD ["uvicorn", "run:app", "--reload", "--port $FAST_API_PORT"]
